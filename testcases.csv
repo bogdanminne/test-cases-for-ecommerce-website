@@ -1,10 +1,47 @@
-TestID  Test case description                             Test steps                                              Test data                             Expected results                        Actual results  Pass/Fail
+TestID  Test case description                             Test steps                                                            Test data                             Expected results                        Actual results  Pass/Fail
 
-1       Check customer login with invalid data            1. Go to site http://127.0.0.1:8000/account/signin/     Username = testing2                   User should not be able to login        As Expected     Pass
-                                                          2. Enter username                                       Password = testinginvalid
+1       Check customer login with invalid data            1. Go to site http://127.0.0.1:8000/account/signin/                   Username = testing2                   User should not be able to login        As Expected     Pass
+                                                          2. Enter username                                                     Password = testinginvalid
                                                           3. Enter password
                                                           4. Click Sign In
 
-2       Check customer register with invalid data         1. Go to site http://127.0.0.1:8000/account/create/     First name = testing1                 User should not be able to register     As Expected     Pass
-                                                          2. Enter invalid data                                   Passowrd = testing1
+2       Check customer register with invalid data         1. Go to site http://127.0.0.1:8000/account/create/                   First name = testing1                 User should not be able to register     As Expected     Pass
+                                                          2. Enter invalid data                                                 Passowrd = testing1
                                                           3. Click Sign Up
+
+3       Check customer register with valid data           1. Go to site http://127.0.0.1:8000/account/create/                   Valid data                            User should be able to register         As Expected     Pass
+                                                          2. Enter valid data
+                                                          3. Click Sign Up
+
+4       Products - verify catalogue is displayed          1. Go to site http://127.0.0.1:8000/                                  N/A                                   User should see the list of products    As Expected     Pass
+                                                          2. Check products display image, description, price                                        
+5       Products - verify individual product              1. Go to site http://127.0.0.1:8000/category/drinks/aguadehorchata    N/A                                   User should see the display correctly   As Expected     Pass
+                                                          2. Verify display - image, desc, price, add to cart, reviews
+6       Verify product search functionality               1. Go to site http://127.0.0.1:8000/                                  Search = garbanzos                    User should see the "garbanzo" product  As Expected     Pass
+                                                          2. Search product
+                                                          3. Press Enter / click on the search icon
+7       Verify category filtering                         1. Go to site http://127.0.0.1:8000/                                  Categories - Drinks                   User should see only "drinks" products  As Expected     Pass
+                                                          2. Press Categories dropdown
+                                                          3. Select a category
+8       Verify user can add product to cart               1. Go to site http://127.0.0.1:8000/                                  Click on "Aguacate"                   User should be redirected to cart       As Expected     Pass
+                                                          2. Click on "Aguacate"
+                                                          3. Click on "Add to Cart"
+9       Verify user can checkout                          1. Go to site http://127.0.0.1:8000/cart                              4242 4242 4242 4242 card number       User should checkout successfully and   As Expected     Pass
+                                                          2. Click on "Pay with Card"                                                                                 see the "thank you" page
+                                                          3. Introduce valid payment data
+                                                          4. Click "Payment info"
+                                                          5. Introduce 4242 4242 4242 4242 card number and valid details
+                                                          6. Click "Pay MXN $x"
+10      Verify user can add/remove cart products          1. Go to site http://127.0.0.1:8000/                                  N/A                                   User should be able to add/remove prods As Expected     Pass
+                                                          2. Click on "garbanzos"
+                                                          3. Click on "Add to Cart"
+                                                          4. Click on "+", click on "-", click on "remove"
+11      Verify user can check order history               1. Go to site http://127.0.0.1:8000/                                  N/A                                   User should see order history           As Expected     Pass
+                                                          2. Click on "Welcome, x"
+                                                          3. Click on "Order History"
+12.     Verify "view order" functionality                 1. Go to site http://127.0.0.1:8000/order_history/                    N/A                                   User should see order details page      As Expected     Pass
+                                                          2. Click on "View Order"
+13.     Verify "print order" functionality                1. Go to site http://127.0.0.1:8000/order/x(order number)             N/A                                   User should see "Print" pop-Up          As Expected     Pass
+                                                          2. Click "Print Order"
+14.     Verify "Contact" page                             1. Go to site http://127.0.0.1:8000/                                  N/A                                   User should see the contact page        As Expected     Pass
+15.     Verify "About" page                               1. Go to site http://127.0.0.1:8000/                                  N/A                                   User should see the about page          As Expected     Pass
