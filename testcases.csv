@@ -1,6 +1,10 @@
-TestID  Test case description                             Test steps                                              Test data                             Expected results                        Actual results                          Pass/Fail
+TestID  Test case description                             Test steps                                              Test data                             Expected results                        Actual results  Pass/Fail
 
-1       Check customer login with invalid data            1. Go to site http://127.0.0.1:8000/account/signin/     Username = testing2                   User should not be able to login        As Expected                             Pass
+1       Check customer login with invalid data            1. Go to site http://127.0.0.1:8000/account/signin/     Username = testing2                   User should not be able to login        As Expected     Pass
                                                           2. Enter username                                       Password = testinginvalid
                                                           3. Enter password
                                                           4. Click Sign In
+
+2       Check customer register with invalid data         1. Go to site http://127.0.0.1:8000/account/create/     First name = testing1                 User should not be able to register     As Expected     Pass
+                                                          2. Enter invalid data                                   Passowrd = testing1
+                                                          3. Click Sign Up
